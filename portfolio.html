@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Portafolio</title>
+
+<style>
+
+body{
+margin:0;
+background:#111;
+color:white;
+font-family:Arial;
+overflow-y:scroll;
+padding-bottom:120px;
+}
+
+/* CATEGORIAS */
+
+.categorias{
+position:sticky;
+top:0;
+background:#000;
+padding:20px;
+display:flex;
+gap:20px;
+justify-content:center;
+}
+
+.categorias button{
+padding:10px 20px;
+cursor:pointer;
+}
+
+/* GRID DIBUJOS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+padding:40px;
+}
+
+.art{
+background:#222;
+border-radius:15px;
+overflow:hidden;
+cursor:pointer;
+transition:0.4s;
+}
+
+.art img{
+width:100%;
+display:block;
+}
+
+.art.grande{
+transform:scale(1.6);
+z-index:5;
+position:relative;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="categorias">
+
+<button onclick="filtrar('cat1')">Categoria 1</button>
+<button onclick="filtrar('cat2')">Categoria 2</button>
+<button onclick="filtrar('cat3')">Categoria 3</button>
+<button onclick="filtrar('cat4')">Categoria 4</button>
+
+</div>
+
+
+<div class="grid">
+
+<!-- 20 ESPACIOS -->
+
+<div class="art cat1"><img src="art/art1.png"></div>
+<div class="art cat1"><img src="art/art2.png"></div>
+<div class="art cat1"><img src="art/art3.png"></div>
+<div class="art cat1"><img src="art/art4.png"></div>
+<div class="art cat1"><img src="art/art5.png"></div>
+
+<div class="art cat2"><img src="art/art6.png"></div>
+<div class="art cat2"><img src="art/art7.png"></div>
+<div class="art cat2"><img src="art/art8.png"></div>
+<div class="art cat2"><img src="art/art9.png"></div>
+<div class="art cat2"><img src="art/art10.png"></div>
+
+<div class="art cat3"><img src="art/art11.png"></div>
+<div class="art cat3"><img src="art/art12.png"></div>
+<div class="art cat3"><img src="art/art13.png"></div>
+<div class="art cat3"><img src="art/art14.png"></div>
+<div class="art cat3"><img src="art/art15.png"></div>
+
+<div class="art cat4"><img src="art/art16.png"></div>
+<div class="art cat4"><img src="art/art17.png"></div>
+<div class="art cat4"><img src="art/art18.png"></div>
+<div class="art cat4"><img src="art/art19.png"></div>
+<div class="art cat4"><img src="art/art20.png"></div>
+
+</div>
+
+
+<script>
+
+/* AGRANDAR DIBUJO */
+
+document.querySelectorAll(".art").forEach(el=>{
+el.addEventListener("click",()=>{
+el.classList.toggle("grande")
+})
+})
+
+/* FILTRAR */
+
+function filtrar(cat){
+
+document.querySelectorAll(".art").forEach(el=>{
+el.style.display="none"
+})
+
+document.querySelectorAll("."+cat).forEach(el=>{
+el.style.display="block"
+})
+
+}
+
+</script>
+
+</body>
+</html>

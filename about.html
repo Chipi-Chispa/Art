@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Sobre mi - Chipi</title>
+
+<style>
+
+body{
+margin:0;
+background:#111;
+color:white;
+font-family:Arial;
+}
+
+/* LOGO */
+
+.logo{
+display:block;
+margin:auto;
+margin-top:40px;
+width:260px;
+}
+
+
+/* SECCION PRINCIPAL */
+
+.aboutContainer{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+width:80%;
+margin:auto;
+margin-top:60px;
+
+}
+
+/* TEXTO */
+
+.textBox{
+
+width:45%;
+text-align:justify;
+font-size:18px;
+line-height:1.6;
+
+}
+
+/* DIBUJO */
+
+.artContainer{
+
+position:relative;
+width:45%;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.art{
+
+width:320px;
+position:relative;
+z-index:2;
+
+}
+
+/* CIRCULO GIRATORIO */
+
+.magicCircle{
+
+position:absolute;
+width:380px;
+height:380px;
+
+border:3px solid white;
+border-radius:50%;
+
+animation:spin 60s linear infinite;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.star{
+
+position:absolute;
+font-size:18px;
+
+}
+
+.star:nth-child(1){top:-10px;}
+.star:nth-child(2){right:-10px;}
+.star:nth-child(3){bottom:-10px;}
+.star:nth-child(4){left:-10px;}
+
+@keyframes spin{
+
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+
+}
+
+
+/* SECCION GUSTOS */
+
+.section2{
+
+width:80%;
+margin:auto;
+margin-top:80px;
+
+font-size:18px;
+line-height:1.7;
+text-align:justify;
+
+}
+
+/* DIBUJO FINAL */
+
+.footerArt{
+
+display:block;
+margin:auto;
+margin-top:80px;
+margin-bottom:120px;
+
+width:120px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<img class="logo" src="logo_chipi.png">
+
+
+<div class="aboutContainer">
+
+<div class="textBox">
+
+<p>
+
+Chipi es una ilustradora digital mexicana dedicada al desarrollo de personajes, mundos visuales y diseño conceptual inspirado en la estética del anime y el arte contemporáneo de internet. A sus 22 años ha construido un estilo visual caracterizado por líneas suaves, composiciones atmosféricas y un fuerte interés por la narrativa visual.
+
+</p>
+
+<p>
+
+Cuenta con formación académica en artes digitales y diseño visual, habiendo estudiado en un programa especializado en ilustración y animación donde desarrolló habilidades en composición, color, narrativa gráfica y diseño de personajes. Su trabajo combina técnicas digitales modernas con influencias de ilustración tradicional.
+
+</p>
+
+<p>
+
+Su oficio principal es la ilustración digital independiente, creando piezas para portafolio personal, encargos artísticos y proyectos experimentales. Le interesa especialmente explorar conceptos relacionados con fantasía, ciencia ficción y simbolismo visual.
+
+</p>
+
+</div>
+
+
+<div class="artContainer">
+
+<div class="magicCircle">
+
+<div class="star">★</div>
+<div class="star">★</div>
+<div class="star">★</div>
+<div class="star">★</div>
+
+</div>
+
+<img class="art" src="about_halfbody.png">
+
+</div>
+
+</div>
+
+
+<div class="section2">
+
+<h2>Intereses y logros</h2>
+
+<p>
+
+Entre sus videojuegos favoritos se encuentran títulos con fuerte dirección artística como <b>Hollow Knight</b>, <b>Journey</b>, <b>NieR: Automata</b> y <b>Celeste</b>, los cuales han influido profundamente en su manera de concebir atmósferas visuales y emociones dentro de una ilustración.
+
+</p>
+
+<p>
+
+También participa activamente en varios fandoms relacionados con anime, animación independiente y videojuegos narrativos, donde comparte ilustraciones inspiradas en personajes y universos ficticios que admira.
+
+</p>
+
+<p>
+
+En el ámbito académico ha obtenido reconocimientos en concursos estudiantiles de arte digital, incluyendo el primer lugar en el concurso universitario "Visiones Fantásticas" de ilustración conceptual y una mención honorífica en el festival juvenil de arte digital "PixelArte".
+
+</p>
+
+<p>
+
+Actualmente continúa expandiendo su portafolio artístico, explorando nuevas técnicas de ilustración y desarrollando proyectos personales enfocados en narrativa visual y worldbuilding.
+
+</p>
+
+</div>
+
+
+<img class="footerArt" src="small_footer_doodle.png">
+
+
+</body>
+</html>
