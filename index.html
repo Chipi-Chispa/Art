@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Chipi Chispa</title>
+<link rel="icon" href="img/icon.png" type="image/png">
+
+<style>
+*{cursor:url("img/cursor.png") 0 0, auto !important;}
+
+body{
+margin:0;
+font-family:Candy Beans;
+background:#111;
+color:white;
+overflow:hidden;
+}
+
+/* LOGO */
+
+#logo{
+position:absolute;
+top:17%;
+left:50%;
+transform:translateX(-50%);
+width:450px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translate(-50%,0px);}
+50%{transform:translate(-50%,20px);}
+100%{transform:translate(-50%,0px);}
+}
+
+/* CARPETAS */
+
+.menu{
+position:absolute;
+top:20%;
+left:75px;
+display:flex;
+gap:40px;
+}
+
+.column{
+display:flex;
+flex-direction:column;
+gap:50px;
+}
+
+.folder{
+display:flex;
+flex-direction:column;
+align-items:center;
+cursor:pointer;
+transition:transform 0.2s, filter 0.2s;
+}
+
+.folder:hover{
+transform:scale(1.15);
+filter:drop-shadow(0 0 10px #a1cdff);
+}
+
+.folder img{
+border-radius:12px;
+width:90px;
+}
+
+.folder span{
+margin-top:10px;
+text-align:center;
+}
+
+/* CONTACTO */
+
+#contactWindow{
+
+position:absolute;
+top:200px;
+left:300px;
+
+width:320px;
+height:120px;
+
+background:#8c5ef7;
+
+border-radius:10px;
+display:none;
+
+box-shadow:0 0 15px white;
+
+}
+
+#contactHeader{
+
+height:30px;
+
+background:#b294f7;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:0 10px;
+
+cursor:move;
+
+border-radius:10px 10px 0 0;
+
+}
+
+/* BOTON CERRAR */
+
+#closeBtn{
+
+width:25px;
+height:25px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border:2px solid white;
+
+cursor:pointer;
+font-weight:bold;
+
+transition:background 0.2s;
+
+}
+
+#closeBtn:hover{
+background:#fcfc44;
+color:black;
+}
+
+.contactContent{
+text-align:center;
+padding-top:10px;
+}
+
+.mail{
+font-weight:bold;
+}
+
+/* BARRA INFERIOR */
+
+.bottomBar{
+
+position:fixed;
+bottom:0;
+width:100%;
+height:8vh;
+
+background:#8c5ef7;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 40px;
+box-sizing:border-box;
+
+z-index:5;
+
+}
+
+/* NUBES */
+
+.cloudContainer{
+
+position:fixed;
+top:0px;
+display:flex;
+animation:cloudMove 120s linear infinite;
+z-index:0;
+pointer-events:none;
+
+}
+
+.cloudContainer img{
+width:100%;
+flex-shrink:0;
+}
+
+@keyframes cloudMove{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(-50%);
+}
+
+}
+
+/* REDES */
+
+.social{
+display:flex;
+gap:30px;
+align-items:center;
+}
+
+.social img{
+
+width:35px;
+cursor:pointer;
+
+transition:transform 0.2s, filter 0.2s;
+
+}
+
+.social img:hover{
+
+transform:scale(1.2);
+filter:drop-shadow(0 0 10px white);
+
+}
+
+/* RELOJ Y CLIMA */
+
+.info{
+
+display:flex;
+gap:20px;
+align-items:center;
+
+font-size:22px;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FONDO -->
+
+<img src="img/fondo.png"
+style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);z-index:0;pointer-events:none;">
+
+<!-- NUBES -->
+
+<div class="cloudContainer">
+
+<img src="img/nubes.png">
+<img src="img/nubes.png">
+
+</div>
+
+<!-- LOGO -->
+<img id="logo" src="img/logo.png">
+
+<!-- CARPETAS -->
+
+<div class="menu">
+<div class="column">
+
+<div class="folder" onclick="openPage('portfolio.html')">
+<img src="img/carpeta1.png">
+<span>Portfolio</span>
+</div>
+
+<div class="folder" onclick="openPage('about.html')">
+<img src="img/carpeta2.png">
+<span>Sobre mi</span>
+</div>
+
+<div class="folder" onclick="openPage('cv.html')">
+<img src="img/carpeta3.png">
+<span>C.V</span>
+</div>
+
+</div>
+
+<div class="column">
+
+<div class="folder" onclick="openContact()">
+<img src="img/carpeta4.png">
+<span>Contacto</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTACTO -->
+
+<div id="contactWindow">
+
+<div id="contactHeader">
+
+<span>:3</span>
+
+<div id="closeBtn" onclick="closeContact()">X</div>
+
+</div>
+
+<div class="contactContent">
+<p class="mail">chipichispaoficial@gmail.com</p>
+</div>
+
+</div>
+
+<!-- BARRA -->
+
+<div class="bottomBar">
+
+<div class="social">
+
+<a href="https://www.youtube.com/@Chipi-Chispa" target="_blank">
+<img src="img/icon_yt.png">
+</a>
+
+<a href="https://www.instagram.com/chipi_chispa/" target="_blank">
+<img src="img/icon_ig.png">
+</a>
+
+<a href="https://vgen.co/Chipi_Chispa" target="_blank">
+<img src="img/icon_vgen.png">
+</a>
+
+<a href="https://discord.gg/Fx4VbdRB" target="_blank">
+<img src="img/icon_discord.png">
+</a>
+
+<a href="https://artfight.net/~Chp" target="_blank">
+<img src="img/icon_af.png">
+</a>
+
+</div>
+
+<div class="info">
+
+<div id="clock"></div>
+<div id="weather">Cargando clima...</div>
+
+</div>
+
+</div>
+
+<!-- AUDIO -->
+
+<audio id="bgMusic" loop>
+<source src="sound/bg.wav" type="audio/wav">
+</audio>
+
+<audio id="clickSound">
+<source src="sound/click.wav">
+</audio>
+
+<script>
+
+/* CONTACTO */
+
+function openContact(){
+
+document.getElementById("contactWindow").style.display="block"
+
+let email="chipichispaoficial@gmail.com"
+
+window.open(
+"https://mail.google.com/mail/?view=cm&fs=1&to="+email,
+"_blank"
+)
+
+}
+
+function closeContact(){
+document.getElementById("contactWindow").style.display="none"
+}
+
+/* ARRASTRAR VENTANA */
+
+let windowBox = document.getElementById("contactWindow")
+let header = document.getElementById("contactHeader")
+
+let offsetX=0
+let offsetY=0
+let dragging=false
+
+header.onmousedown=function(e){
+
+dragging=true
+offsetX=e.clientX-windowBox.offsetLeft
+offsetY=e.clientY-windowBox.offsetTop
+
+}
+
+document.onmouseup=function(){
+dragging=false
+}
+
+document.onmousemove=function(e){
+
+if(!dragging) return
+
+windowBox.style.left=(e.clientX-offsetX)+"px"
+windowBox.style.top=(e.clientY-offsetY)+"px"
+
+}
+
+/* MUSICA */
+
+let musicStarted=false
+
+document.addEventListener("click",()=>{
+
+if(!musicStarted){
+document.getElementById("bgMusic").play()
+musicStarted=true
+}
+
+})
+
+/* CLICK */
+
+document.addEventListener("click",()=>{
+
+let s=document.getElementById("clickSound")
+s.currentTime=0
+s.play()
+
+})
+
+/* RELOJ */
+
+function updateClock(){
+let now=new Date()
+let time=now.toLocaleTimeString('en-US',{
+hour:'2-digit',
+minute:'2-digit',
+hour12:true
+})
+
+document.getElementById("clock").innerText=time
+
+}
+
+setInterval(updateClock,1000)
+
+/* CLIMA */
+
+const apiKey='ee2e78cced3b9710fbdf4ad42ef47a9a'
+const ciudad='Ciudad de México'
+
+async function obtenerClima(){
+
+try{
+
+const respuesta=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`)
+
+const datos=await respuesta.json()
+
+const temp=Math.round(datos.main.temp)
+const descripcion=datos.weather[0].description
+const icono=datos.weather[0].icon
+
+document.getElementById('weather').innerHTML=
+`<img src="https://openweathermap.org/img/wn/${icono}.png" style="vertical-align:middle"> ${temp}°C`
+
+}catch{
+
+document.getElementById('weather').innerText='Clima no disponible'
+
+}
+
+}
+
+obtenerClima()
+
+/* CAMBIO PAGINA */
+
+function openPage(page){
+window.location.href=page
+}
+
+</script>
+
+</body>
+</html>
