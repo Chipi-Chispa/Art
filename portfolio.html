@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Chipi Chispa</title>
+<link rel="icon" href="img/icon.png" type="image/png">
+
+<style>
+*{cursor:url("img/cursor.png") 0 0, auto !important;}
+
+body{
+margin:0;
+font-family:Candy Beans;
+background:#111;
+color:white;
+overflow-x:hidden;
+}
+
+/* LOGO */
+
+#logo{
+display:block;
+margin:20px auto;
+width:450px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(20px);}
+100%{transform:translateY(0px);}
+}
+
+/* CATEGORIAS */
+
+.categorias{
+position:sticky;
+top:0;
+background:rgba(0,0,0,.9);
+padding:20px;
+display:flex;
+gap:50px;
+justify-content:center;
+z-index:10;
+}
+
+.categorias img{
+
+height:80px;
+cursor:pointer;
+
+transition:transform .2s, filter .2s;
+
+}
+
+.categorias img:hover{
+
+transform:scale(1.2);
+filter:drop-shadow(0 0 10px white);
+
+}
+
+/* GRID */
+
+.grid{
+
+column-count:4;
+column-gap:20px;
+
+max-width:1400px;
+margin:auto;
+padding:40px;
+}
+
+.art{
+
+break-inside:avoid;
+margin-bottom:20px;
+cursor:pointer;
+
+}
+
+.art img{
+
+width:100%;
+border-radius:15px;
+
+transition:transform .3s, box-shadow .3s;
+
+}
+
+.art img:hover{
+
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(255,255,255,.5);
+
+}
+
+/* OVERLAY */
+
+#overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:1000;
+cursor:zoom-out;
+}
+
+#overlay img{
+max-width:90vw;
+max-height:90vh;
+border-radius:15px;
+}
+
+/* BOTON VOLVER */
+
+.volver{
+display:block;
+margin:80px auto;
+padding:15px 30px;
+background:#8c5ef7;
+border:2px solid white;
+border-radius:30px;
+color:white;
+text-decoration:none;
+width:max-content;
+}
+
+/* BARRA INFERIOR */
+
+.bottomBar{
+
+width:100%;
+height:8vh;
+
+background:#8c5ef7;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 40px;
+box-sizing:border-box;
+
+margin-top:60px;
+
+}
+
+/* REDES */
+
+.social{
+
+display:flex;
+gap:30px;
+align-items:center;
+
+}
+
+.social img{
+
+width:35px;
+cursor:pointer;
+transition:transform .2s, filter .2s;
+
+}
+
+.social img:hover{
+
+transform:scale(1.2);
+filter:drop-shadow(0 0 10px white);
+
+}
+
+/* RELOJ Y CLIMA */
+
+.info{
+
+display:flex;
+gap:20px;
+align-items:center;
+
+font-size:22px;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<img id="logo" src="img/logo.png">
+
+<div class="categorias">
+
+<img src="img/cat_all.png" onclick="filtrar('all')">
+<img src="img/cat_simple.png" onclick="filtrar('simple')">
+<img src="img/cat_paint.png" onclick="filtrar('paint')">
+<img src="img/cat_back.png" onclick="filtrar('back')">
+<img src="img/cat_pixel.png" onclick="filtrar('pixel')">
+
+</div>
+
+<div class="grid">
+
+<div class="art paint"><img loading="lazy" src="art/p1.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p2.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p3.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p4.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p5.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p6.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p7.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p8.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p9.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p10.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p11.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p12.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p13.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p14.png"></div>
+<div class="art paint"><img loading="lazy" src="art/p15.png"></div>
+
+<div class="art back"><img loading="lazy" src="art/b1.png"></div>
+<div class="art back"><img loading="lazy" src="art/b2.png"></div>
+<div class="art back"><img loading="lazy" src="art/b3.gif"></div>
+<div class="art back"><img loading="lazy" src="art/b4.png"></div>
+<div class="art back"><img loading="lazy" src="art/b5.png"></div>
+<div class="art back"><img loading="lazy" src="art/b6.png"></div>
+<div class="art back"><img loading="lazy" src="art/b7.png"></div>
+<div class="art back"><img loading="lazy" src="art/b8.png"></div>
+<div class="art back"><img loading="lazy" src="art/b9.png"></div>
+<div class="art back"><img loading="lazy" src="art/b10.png"></div>
+<div class="art back"><img loading="lazy" src="art/b11.png"></div>
+<div class="art back"><img loading="lazy" src="art/b12.png"></div>
+
+<div class="art simple"><img loading="lazy" src="art/s1.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s2.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s3.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s4.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s5.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s6.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s7.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s8.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s9.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s10.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s11.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s12.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s13.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s14.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s15.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s16.png"></div>
+<div class="art simple"><img loading="lazy" src="art/s17.png"></div>
+
+<div class="art pixel"><img loading="lazy" src="art/a1.png"></div>
+<div class="art pixel"><img loading="lazy" src="art/a2.gif"></div>
+<div class="art pixel"><img loading="lazy" src="art/a3.gif"></div>
+<div class="art pixel"><img loading="lazy" src="art/a4.png"></div>
+<div class="art pixel"><img loading="lazy" src="art/a5.png"></div>
+
+</div>
+
+<div id="overlay" onclick="cerrarImagen()">
+<img id="imgExpandida">
+</div>
+
+<a class="volver" href="index.html">Volver a la página principal</a>
+
+<!-- BARRA -->
+<div class="bottomBar">
+
+<div class="social">
+<a href="https://www.youtube.com/@Chipi-Chispa"><img src="img/icon_yt.png"></a>
+<a href="https://www.instagram.com/chipi_chispa/"><img src="img/icon_ig.png"></a>
+<a href="https://vgen.co/Chipi_Chispa"><img src="img/icon_vgen.png"></a>
+<a href="https://discord.gg/Fx4VbdRB"><img src="img/icon_discord.png"></a>
+<a href="https://artfight.net/~Chp"><img src="img/icon_af.png"></a>
+</div>
+
+<div class="info">
+
+<div id="clock"></div>
+<div id="weather">Cargando clima...</div>
+
+</div>
+
+</div>
+
+<!-- AUDIO -->
+
+<audio id="bgMusic" loop>
+<source src="sound/bg.wav" type="audio/wav">
+</audio>
+
+<audio id="clickSound">
+<source src="sound/click.wav">
+</audio>
+
+<script>
+
+const clickSound=document.getElementById("clickSound")
+const overlay=document.getElementById("overlay")
+const imgExpandida=document.getElementById("imgExpandida")
+
+document.querySelectorAll(".art img").forEach(img=>{
+img.onclick=(e)=>{
+e.stopPropagation()
+clickSound.currentTime=0
+clickSound.play()
+imgExpandida.src=img.src
+overlay.style.display="flex"
+document.body.style.overflow="hidden"
+}
+})
+
+function cerrarImagen(){
+overlay.style.display="none"
+document.body.style.overflow="auto"
+}
+
+/* FILTRO */
+
+function filtrar(cat){
+
+const grid=document.querySelector(".grid")
+
+document.querySelectorAll(".art").forEach(el=>{
+
+if(cat==="all" || el.classList.contains(cat)){
+el.style.display="block"
+}else{
+el.style.display="none"
+}
+
+})
+
+/* fuerza reacomodo de columnas */
+grid.style.columnCount="4"
+}
+
+/* HORA */
+
+function updateClock(){
+
+let now=new Date()
+
+let time=now.toLocaleTimeString('en-US',{
+hour:'2-digit',
+minute:'2-digit',
+hour12:true
+})
+
+document.getElementById("clock").innerText=time
+
+}
+
+setInterval(updateClock,1000)
+updateClock()
+
+/* CLIMA */
+
+const apiKey='ee2e78cced3b9710fbdf4ad42ef47a9a'
+const ciudad='Ciudad de México'
+
+async function obtenerClima(){
+
+try{
+
+const respuesta=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`)
+
+const datos=await respuesta.json()
+
+const temp=Math.round(datos.main.temp)
+const descripcion=datos.weather[0].description
+const icono=datos.weather[0].icon
+
+document.getElementById('weather').innerHTML=
+`<img src="https://openweathermap.org/img/wn/${icono}.png" style="vertical-align:middle"> ${temp}°C`
+
+}catch{
+
+document.getElementById('weather').innerText='Clima no disponible'
+
+}
+
+}
+
+obtenerClima()
+
+</script>
+</body>
+</html>
